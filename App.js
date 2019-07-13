@@ -6,7 +6,7 @@ import TabNavigator from "./src/tab";
 import { BackHandler, View } from "react-native";
 import Toast from "react-native-easy-toast";
 import Loading from "./src/components/Loading";
-import Welcome from "./src/components/Welcome";;
+import SplashScreen from "react-native-splash-screen";;
 
 import store from "./src/store";
 
@@ -14,6 +14,7 @@ let Navigation = createAppContainer(TabNavigator);
 // Render the app container component with the provider around it
 export default class App extends Component {
   componentDidMount() {
+    SplashScreen.hide();
     BackHandler.addEventListener("hardwareBackPress", this.handleBackPress);
   }
 
@@ -58,7 +59,6 @@ export default class App extends Component {
               Component.prototype.$loading = loading;
             }}
           />
-          <Welcome />
         </View>
       </Provider>
     );

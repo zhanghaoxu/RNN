@@ -3,7 +3,7 @@ import {
   createBottomTabNavigator,
   createStackNavigator
 } from "react-navigation";
-import { Icon } from "react-native-elements";
+import Icon from "react-native-vector-icons/AntDesign";
 
 // HomeStack
 import HomeScreen from "../pages/Home";
@@ -44,16 +44,18 @@ const TabNavigator = createBottomTabNavigator(
         if (routeName === "Home") {
           iconName = "home";
         } else if (routeName === "My") {
-          iconName = "person";
+          iconName = "user";
         }
-        return <Icon name={iconName} size={25} color={tintColor} />;
+        return <Icon name={iconName} size={23} color={tintColor} />;
       }
     }),
 
     backBehavior: "none",
     tabBarOptions: {
-      activeTintColor: "#2089dc",
-      inactiveTintColor: "gray"
+      activeBackgroundColor: "#6200ee",
+      inactiveBackgroundColor: "#6200ee",
+      activeTintColor: "#fff",
+      inactiveTintColor: "grey"
     }
   }
 );

@@ -1,12 +1,14 @@
-import { Header } from "react-native-elements";
+import { Appbar } from "react-native-paper";
 import { StatusBar, View } from "react-native";
-import HeaderMenu from "src/components/Headers/HeaderMenu";
-import HeaderShare from "src/components/Headers/HeaderShare";
 import React from "react";
 class HomeHeader extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  _onSearch = () => console.warn("Searching");
+
+  _onMore = () => console.warn("Shown more");
   render() {
     return (
       <View>
@@ -16,11 +18,11 @@ class HomeHeader extends React.Component {
           hidden={false}
           animated={true}
         />
-        <Header
-          leftComponent={<HeaderMenu />}
-          centerComponent={{ text: this.props.title, style: { color: "#fff" } }}
-          rightComponent={<HeaderShare />}
-        />
+        <Appbar.Header statusBarHeight={15}>
+          <Appbar.Content title="Title" />
+          <Appbar.Action icon="search" onPress={this._onSearch} />
+          <Appbar.Action icon="more-vert" onPress={this._onMore} />
+        </Appbar.Header>
       </View>
     );
   }

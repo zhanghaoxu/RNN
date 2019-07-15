@@ -6,7 +6,7 @@ import TabNavigator from "./src/tab";
 import { BackHandler, View } from "react-native";
 import Toast from "react-native-easy-toast";
 import Loading from "./src/components/Loading";
-import SplashScreen from "react-native-splash-screen";;
+import SplashScreen from "react-native-splash-screen";
 
 import store from "./src/store";
 

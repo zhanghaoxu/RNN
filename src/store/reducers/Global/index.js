@@ -1,16 +1,18 @@
 const initialState = {
-  loadingUserCount: 0
+  joinedList: [],
+  isFetchingJoinedList: false
 };
 
 const GlobalReducers = (state, action) => {
   switch (action.type) {
-    case "SHOW_LOADING":
+    case "GET_JOINED_LIST_END":
       return Object.assign({}, initialState, {
-        loadingUserCount: state.loadingUserCount + 1
+        isFetchingJoinedList: false,
+        joinedList: action.data
       });
-    case "HIDE_LOADING":
+    case "GET_JOINED_LIST_START":
       return Object.assign({}, initialState, {
-        loadingUserCount: state.loadingUserCount - 1
+        isFetchingJoinedList: true
       });
     default:
       return initialState;

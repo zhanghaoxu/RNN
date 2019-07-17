@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Button } from "react-native";
 import HomeHeader from "./components/HomeHeader";
 import HomeMain from "./components/HomeMain";
-import { getCommunityAllList } from "src/apis/base";
+
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
@@ -11,17 +11,24 @@ class HomeScreen extends Component {
       title: "Home"
     };
   }
+
+  componentDidMount() {
+    const { getJoinedListHttp, dispatch } = this.props;
+    dispatch(getJoinedListHttp());
+  }
+
   render() {
     const headerTitle = this.state.title;
+    const { globalState } = this.props;
     return (
       <View
         style={{
           flex: 1,
-          backgroundColor: "#ecf0f1"
+          backgroundColor: "#FEDC24"
         }}
       >
         <HomeHeader title={headerTitle} />
-        <HomeMain />
+        <HomeMain joinedList={globalState.joinedList} />
       </View>
     );
   }

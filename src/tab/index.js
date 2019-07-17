@@ -14,6 +14,9 @@ import HomeStackBlogScreen from "../pages/Home/Subs/Blog";
 import MyScreen from "../pages/My";
 import MyStackDetailScreen from "../pages/My/Subs/Detail";
 
+// FindStack
+import FindScreen from "../pages/Find";
+
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -22,18 +25,44 @@ const HomeStack = createStackNavigator(
   },
   {
     mode: "modal",
-    headerMode: "none"
+    headerMode: "none",
+    navigationOptions: {
+      tabBarLabel: "打卡"
+    }
   }
 );
 
-const MyStack = createStackNavigator({
-  My: MyScreen,
-  MyDetail: MyStackDetailScreen
-});
+const FindStack = createStackNavigator(
+  {
+    Find: FindScreen
+  },
+  {
+    mode: "modal",
+    headerMode: "none",
+    navigationOptions: {
+      tabBarLabel: "发现"
+    }
+  }
+);
+
+const MyStack = createStackNavigator(
+  {
+    My: MyScreen,
+    MyDetail: MyStackDetailScreen
+  },
+  {
+    mode: "modal",
+    headerMode: "none",
+    navigationOptions: {
+      tabBarLabel: "我的"
+    }
+  }
+);
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: HomeStack,
+    Find: FindStack,
     My: MyStack
   },
   {
@@ -45,6 +74,8 @@ const TabNavigator = createBottomTabNavigator(
           iconName = "home";
         } else if (routeName === "My") {
           iconName = "user";
+        } else if (routeName === "Find") {
+          iconName = "find";
         }
         return <Icon name={iconName} size={23} color={tintColor} />;
       }
@@ -52,10 +83,8 @@ const TabNavigator = createBottomTabNavigator(
 
     backBehavior: "none",
     tabBarOptions: {
-      activeBackgroundColor: "#6200ee",
-      inactiveBackgroundColor: "#6200ee",
-      activeTintColor: "#fff",
-      inactiveTintColor: "grey"
+      activeTintColor: "#222",
+      inactiveTintColor: "#AFAFAF"
     }
   }
 );

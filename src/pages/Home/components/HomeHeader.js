@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import { Appbar } from "react-native-paper";
 import { StatusBar, View } from "react-native";
 import React from "react";
@@ -13,13 +14,18 @@ class HomeHeader extends React.Component {
     return (
       <View>
         <StatusBar
-          backgroundColor="transparent"
+          backgroundColor="#eace2f"
           translucent={true}
           hidden={false}
           animated={true}
         />
-        <Appbar.Header statusBarHeight={15}>
-          <Appbar.Content title="Title" />
+        <Appbar.Header
+          style={{
+            backgroundColor: "#FEDC24"
+          }}
+          statusBarHeight={15}
+        >
+          <Appbar.Content title="打卡" />
           <Appbar.Action icon="search" onPress={this._onSearch} />
           <Appbar.Action icon="more-vert" onPress={this._onMore} />
         </Appbar.Header>

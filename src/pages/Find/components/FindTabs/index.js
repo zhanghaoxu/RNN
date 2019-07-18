@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet, View, Text } from "react-native";
 import Tab from "./tab";
 import { ActivityIndicator } from "react-native-paper";
+import baseConfig from "src/config/baseConfig";
 export default class FindTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -39,8 +40,8 @@ export default class FindTabs extends React.Component {
 }
 let styles = StyleSheet.create({
   wrapper: {
-    marginTop: 10,
-    height: 50
+    height: 50,
+    backgroundColor: baseConfig.baseColor
   },
   contentContainer: {},
   textContainer: {

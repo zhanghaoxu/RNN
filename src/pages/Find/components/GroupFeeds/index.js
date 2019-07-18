@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Feed from "./feed";
 import { ActivityIndicator } from "react-native-paper";
 
@@ -10,7 +10,6 @@ export default class GroupFeeds extends React.Component {
 
   render() {
     let feedList = this.props.feedList.feeds;
-    console.warn(feedList.map);
     let isFetchingFeedList = this.props.isFetchingFeedList;
 
     let feedListView = feedList.map((v, index) => {
@@ -25,20 +24,17 @@ export default class GroupFeeds extends React.Component {
       );
     });
 
-    let dataFetchingView = <ActivityIndicator animating={true} color="#fff" />;
-    let dataFetchedView = (
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-        {feedListView}
-      </ScrollView>
-    );
+    let dataFetchingView = <ActivityIndicator animating={true} color="#000" />;
+    let dataFetchedView = feedListView;
     let GroupFeedsView = isFetchingFeedList
       ? dataFetchingView
       : dataFetchedView;
-    return <View>{GroupFeedsView}</View>;
+    return <View style={styles.wrapper}>{GroupFeedsView}</View>;
   }
 }
 let styles = StyleSheet.create({
-  contentContainer: {
-    marginTop: 30
+  wrapper: {
+    flex: 1,
+    marginTop: 10
   }
 });

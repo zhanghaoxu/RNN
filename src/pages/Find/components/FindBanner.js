@@ -1,16 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Swiper from "react-native-swiper";
-export default class CardList extends React.Component {
+export default class FindBanner extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    let { cardList } = this.props;
     return (
       <View style={styles.wrapper}>
-        <Swiper showsButtons={false}>
+        <Swiper showsButtons={false} autoplay={true}>
           <View style={styles.slide}>
             <Text style={styles.text}>Hello Swiper</Text>
           </View>
@@ -28,16 +27,16 @@ export default class CardList extends React.Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1
+    height: 125
   },
   slide: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
-    marginRight: 20,
-    marginLeft: 20,
-    borderRadius: 10
+    marginRight: 10,
+    marginLeft: 10,
+    borderRadius: 8
   },
 
   text: {

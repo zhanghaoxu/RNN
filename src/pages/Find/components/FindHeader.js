@@ -2,7 +2,7 @@
 import { Appbar } from "react-native-paper";
 import { StatusBar, View } from "react-native";
 import React from "react";
-class HomeHeader extends React.Component {
+class FindHeader extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -33,4 +33,4 @@ class HomeHeader extends React.Component {
     );
   }
 }
-export default HomeHeader;
+export default FindHeader;

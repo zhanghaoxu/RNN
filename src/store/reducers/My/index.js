@@ -4,16 +4,16 @@ const initialState = {
   }
 };
 
-const MyReducers = (state, action) => {
+const MyReducers = (state = initialState, action) => {
   switch (action.type) {
     case "CHANGE_WEIGHT":
-      return Object.assign({}, initialState, {
+      return Object.assign({}, state, {
         userInfo: {
           weight: action.weight
         }
       });
     default:
-      return initialState;
+      return state;
   }
 };
 

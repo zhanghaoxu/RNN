@@ -5,22 +5,22 @@ const initialState = {
   }
 };
 
-const HomeReducers = (state, action) => {
+const HomeReducers = (state = initialState, action) => {
   switch (action.type) {
     case "CHANGE_NAME":
-      return Object.assign({}, initialState, {
+      return Object.assign({}, state, {
         userInfo: {
           name: action.name
         }
       });
     case "CHANGE_AGE":
-      return Object.assign({}, initialState, {
+      return Object.assign({}, state, {
         userInfo: {
           age: action.age
         }
       });
     default:
-      return initialState;
+      return state;
   }
 };
 

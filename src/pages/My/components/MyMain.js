@@ -1,8 +1,7 @@
 import { View, Button, Text, StyleSheet } from "react-native";
 import React from "react";
-import TotalDakaCount from "./TotalDakaCount";
-import CardList from "./CardList";
-export default class HomeMain extends React.Component {
+
+export default class MyMain extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -11,8 +10,7 @@ export default class HomeMain extends React.Component {
     let { joinedList } = this.props;
     return (
       <View style={style.container}>
-        <TotalDakaCount totalDakaCount={20} />
-        <CardList cardList={joinedList} />
+        <Text>哈哈ha</Text>
       </View>
     );
   }
@@ -21,7 +19,6 @@ export default class HomeMain extends React.Component {
 let style = StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom: 20,
-    paddingTop: 40
+    paddingBottom: 20
   }
 });

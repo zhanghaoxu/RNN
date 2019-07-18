@@ -1,21 +1,20 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from "react";
 import { View } from "react-native";
-import HomeHeader from "./components/HomeHeader";
-import HomeMain from "./components/HomeMain";
+import MyHeader from "./components/MyHeader";
+import MyMain from "./components/MyMain";
 import baseConfig from "src/config/baseConfig";
 
-class HomeScreen extends Component {
+class MyScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "打卡"
+      title: "我的"
     };
   }
 
   componentDidMount() {
     const { getJoinedListHttp, dispatch } = this.props;
-    console.log("home mounted");
     dispatch(getJoinedListHttp());
   }
 
@@ -29,10 +28,11 @@ class HomeScreen extends Component {
           backgroundColor: baseConfig.baseColor
         }}
       >
-        <HomeMain joinedList={globalState.joinedList} />
+        <MyHeader title={headerTitle} />
+        <MyMain joinedList={globalState.joinedList} />
       </View>
     );
   }
 }
 
-export default HomeScreen;
+export default MyScreen;

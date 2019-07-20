@@ -13,6 +13,12 @@ export function getCommunityListEnd(data) {
   };
 }
 
+export function getCommunityListError() {
+  return {
+    type: "GET_COMMUNITY_LIST_ERROR"
+  };
+}
+
 export function getFeedListStart() {
   return {
     type: "GET_FEED_LIST_START"
@@ -26,16 +32,22 @@ export function getFeedListEnd(data) {
   };
 }
 
+export function getFeedListError() {
+  return {
+    type: "GET_FEED_LIST_ERROR"
+  };
+}
+
 export const getCommunityListHttp = () => {
   return function(dispatch) {
     dispatch(getCommunityListStart());
 
     getCommunityAllList()
       .then(data => {
-        console.warn("get tabs");
         dispatch(getCommunityListEnd(data));
       })
       .catch(e => {
+        dispatch(getCommunityListError());
         console.log(e);
       });
   };
@@ -49,6 +61,7 @@ export const getFeedListHttp = () => {
         dispatch(getFeedListEnd(data));
       })
       .catch(e => {
+        dispatch(getFeedListError());
         console.log(e);
       });
   };

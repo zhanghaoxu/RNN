@@ -14,7 +14,6 @@ class FindScreen extends Component {
   }
 
   componentDidMount() {
-    console.warn("get data");
     const { getCommunityListHttp, getFeedListHttp, dispatch } = this.props;
 
     dispatch(getCommunityListHttp());

@@ -28,9 +28,12 @@ function Request(options, { $loading, $toast }) {
       }
     })
     .catch(e => {
-      console.warn("error");
-      options.loading && $loading && $loading.hide();
-      $toast.show("网络错误");
+      return new Promise(function(resolve, reject) {
+        console.log("error");
+        options.loading && $loading && $loading.hide();
+        $toast.show("网络错误");
+        reject();
+      });
     });
 }
 

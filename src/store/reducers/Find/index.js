@@ -11,13 +11,11 @@ const initialState = {
 const FindReducers = (state = initialState, action) => {
   switch (action.type) {
     case "GET_COMMUNITY_LIST_END":
-      console.warn("tab end");
       return Object.assign({}, state, {
         isFetchingCommunityList: false,
         communityList: action.data
       });
     case "GET_COMMUNITY_LIST_START":
-      console.warn("tab start");
       return Object.assign({}, state, {
         isFetchingCommunityList: true
       });
@@ -30,7 +28,16 @@ const FindReducers = (state = initialState, action) => {
       return Object.assign({}, state, {
         isFetchingFeedList: true
       });
+    case "GET_FEED_LIST_ERROR":
+      return Object.assign({}, state, {
+        isFetchingFeedList: false
+      });
+    case "GET_COMMUNITY_LIST_ERROR":
+      return Object.assign({}, state, {
+        isFetchingCommunityList: false
+      });
     default:
+      console.log(111);
       return state;
   }
 };

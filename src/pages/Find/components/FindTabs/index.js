@@ -11,13 +11,33 @@ export default class FindTabs extends React.Component {
     };
   }
 
+  handleSelect(x, id) {
+    this.$scroll.scrollTo({
+      x,
+      animated: true
+    });
+    this.setState({
+      activeCommunityId: id
+    });
+
+    this.props.updateFeedList(id);
+  }
+
   render() {
     let communityList = this.props.communityList;
     let activeCommunityId = this.state.activeCommunityId;
 
     let TabList = communityList.map(v => {
       let isActive = activeCommunityId === parseInt(v.id, 10);
-      return <Tab key={v.id} name={v.name} isActive={isActive} />;
+      return (
+        <Tab
+          key={v.id}
+          id={v.id}
+          name={v.name}
+          isActive={isActive}
+          handleSelect={this.handleSelect.bind(this)}
+        />
+      );
     });
 
     let dataFetchingView = <ActivityIndicator animating={true} color="#fff" />;
@@ -26,6 +46,9 @@ export default class FindTabs extends React.Component {
       <ScrollView
         contentContainerStyle={styles.contentContainer}
         horizontal={true}
+        ref={scroll => {
+          this.$scroll = scroll;
+        }}
       >
         {TabList}
       </ScrollView>

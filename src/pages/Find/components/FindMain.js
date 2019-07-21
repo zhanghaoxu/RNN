@@ -26,6 +26,7 @@ export default class FindMain extends React.Component {
         <FindTabs
           communityList={communityList}
           isFetchingCommunityList={isFetchingCommunityList}
+          updateFeedList={this.props.updateFeedList}
         />
         <View style={style.list}>
           <Button

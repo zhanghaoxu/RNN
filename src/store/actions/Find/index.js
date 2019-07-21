@@ -26,11 +26,13 @@ export function getFeedListEnd(data) {
   };
 }
 
-export const getCommunityListHttp = () => {
+export const getCommunityListHttp = (id = 1) => {
   return function(dispatch) {
     dispatch(getCommunityListStart());
 
-    getCommunityAllList()
+    getCommunityAllList({
+      communityId: id
+    })
       .then(data => {
         console.warn("get tabs");
         dispatch(getCommunityListEnd(data));

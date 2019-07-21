@@ -14,13 +14,16 @@ class FindScreen extends Component {
   }
 
   componentDidMount() {
-    console.warn("get data");
-    const { getCommunityListHttp, getFeedListHttp, dispatch } = this.props;
+    const { getCommunityListHttp, dispatch } = this.props;
 
+    this.getFeedList();
     dispatch(getCommunityListHttp());
+  }
+  getFeedList() {
+    const { getFeedListHttp, dispatch } = this.props;
+
     dispatch(getFeedListHttp());
   }
-
   render() {
     const headerTitle = this.state.title;
     const { findState } = this.props;
@@ -33,6 +36,7 @@ class FindScreen extends Component {
       >
         <FindHeader title={headerTitle} />
         <FindMain
+          updateFeedList={this.getFeedList.bind(this)}
           communityList={findState.communityList}
           isFetchingCommunityList={findState.isFetchingCommunityList}
           feedList={findState.feedList}

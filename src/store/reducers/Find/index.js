@@ -28,7 +28,16 @@ const FindReducers = (state = initialState, action) => {
       return Object.assign({}, state, {
         isFetchingFeedList: true
       });
+    case "GET_FEED_LIST_ERROR":
+      return Object.assign({}, state, {
+        isFetchingFeedList: false
+      });
+    case "GET_COMMUNITY_LIST_ERROR":
+      return Object.assign({}, state, {
+        isFetchingCommunityList: false
+      });
     default:
+      console.log(111);
       return state;
   }
 };

@@ -1,17 +1,52 @@
-import { View, Button, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Button,
+  Text,
+  StyleSheet,
+  ScrollView,
+  RefreshControl
+} from "react-native";
 import React from "react";
+import MyBanner from "./MyBanner";
+import MyUgc from "./MyUgc";
+import MyGroupList from "./MyGroupList";
 
 export default class MyMain extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  _onRefresh() {
+    console.log(1111);
+  }
   render() {
-    let { joinedList } = this.props;
+    let {
+      dakaStatistics,
+      groupList,
+      ugcList,
+      todayAmount,
+      totalAmount,
+      userInfo
+    } = this.props;
     return (
-      <View style={style.container}>
-        <Text>哈哈ha</Text>
-      </View>
+      <ScrollView
+        refreshControl={
+          <RefreshControl
+            refreshing={false}
+            onRefresh={this._onRefresh.bind(this)}
+          />
+        }
+      >
+        <View style={style.container}>
+          <MyBanner
+            dakaStatistics={dakaStatistics}
+            totalAmount={totalAmount}
+            todayAmount={todayAmount}
+            userInfo={userInfo}
+          />
+          <MyUgc ugcList={ugcList} />
+          <MyGroupList groupList={groupList} />
+        </View>
+      </ScrollView>
     );
   }
 }

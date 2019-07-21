@@ -14,13 +14,21 @@ class MyScreen extends Component {
   }
 
   componentDidMount() {
-    const { getJoinedListHttp, dispatch } = this.props;
-    dispatch(getJoinedListHttp());
+    const {
+      dispatch,
+      getDakaMyHttp,
+      getMyRewardHttp,
+      getUserInfoHttp
+    } = this.props;
+    dispatch(getUserInfoHttp());
+    dispatch(getDakaMyHttp());
+    dispatch(getMyRewardHttp());
   }
 
   render() {
     const headerTitle = this.state.title;
-    const { globalState } = this.props;
+    const { globalState, myState } = this.props;
+    console.log(globalState.userInfo);
     return (
       <View
         style={{
@@ -29,7 +37,14 @@ class MyScreen extends Component {
         }}
       >
         <MyHeader title={headerTitle} />
-        <MyMain joinedList={globalState.joinedList} />
+        <MyMain
+          userInfo={globalState.userInfo}
+          dakaStatistics={myState.dakaStatistics}
+          groupList={myState.groupList}
+          ugcList={myState.ugcList}
+          todayAmount={myState.todayAmount}
+          totalAmount={myState.totalAmount}
+        />
       </View>
     );
   }

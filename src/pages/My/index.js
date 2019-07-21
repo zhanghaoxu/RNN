@@ -1,12 +1,15 @@
 import MyScreen from "./MyScreen";
 import { connect } from "react-redux";
 
-import { getJoinedListHttp } from "src/store/actions/Global";
+import { getUserInfoHttp } from "src/store/actions/Global";
+import { getMyRewardHttp, getDakaMyHttp } from "src/store/actions/My";
 
 let MyScreenContainer = connect(state => ({
-  homeState: state.home,
+  myState: state.my,
   globalState: state.global,
-  getJoinedListHttp: getJoinedListHttp
+  getUserInfoHttp,
+  getMyRewardHttp,
+  getDakaMyHttp
 }))(MyScreen);
 
 export default MyScreenContainer;

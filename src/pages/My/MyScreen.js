@@ -14,6 +14,10 @@ class MyScreen extends Component {
   }
 
   componentDidMount() {
+    this._getData();;
+  }
+
+  _getData() {
     const {
       dispatch,
       getDakaMyHttp,
@@ -38,12 +42,14 @@ class MyScreen extends Component {
       >
         <MyHeader title={headerTitle} />
         <MyMain
+          isFetchingDakaMy={myState.isFetchingDakaMy}
           userInfo={globalState.userInfo}
           dakaStatistics={myState.dakaStatistics}
           groupList={myState.groupList}
           ugcList={myState.ugcList}
           todayAmount={myState.todayAmount}
           totalAmount={myState.totalAmount}
+          refresh={this._getData.bind(this)}
         />
       </View>
     );

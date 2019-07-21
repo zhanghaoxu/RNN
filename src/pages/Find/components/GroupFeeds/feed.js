@@ -44,13 +44,14 @@ let styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     borderRadius: 8,
-    marginBottom: 15
+    marginBottom: 15,
+    padding: 10
   },
   title: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10
+    marginBottom: 10
   },
   titleMain: {
     fontSize: 15,

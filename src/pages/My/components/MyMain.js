@@ -16,7 +16,7 @@ export default class MyMain extends React.Component {
     super(props);
   }
   _onRefresh() {
-    console.log(1111);
+    this.props.refresh();
   }
   render() {
     let {
@@ -25,7 +25,8 @@ export default class MyMain extends React.Component {
       ugcList,
       todayAmount,
       totalAmount,
-      userInfo
+      userInfo,
+      isFetchingDakaMy
     } = this.props;
     return (
       <ScrollView
@@ -43,8 +44,11 @@ export default class MyMain extends React.Component {
             todayAmount={todayAmount}
             userInfo={userInfo}
           />
-          <MyUgc ugcList={ugcList} />
-          <MyGroupList groupList={groupList} />
+          <MyUgc ugcList={ugcList} isFetchingDakaMy={isFetchingDakaMy} />
+          <MyGroupList
+            groupList={groupList}
+            isFetchingDakaMy={isFetchingDakaMy}
+          />
         </View>
       </ScrollView>
     );

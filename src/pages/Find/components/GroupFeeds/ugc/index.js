@@ -32,6 +32,6 @@ let styles = StyleSheet.create({
     flexDirection: "row"
   },
   ugcItem: {
-    marginLeft: 6
+    marginRight: 6
   }
 });

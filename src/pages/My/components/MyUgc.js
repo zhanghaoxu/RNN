@@ -1,20 +1,30 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import UgcList from "src/pages/Find/components/GroupFeeds/ugc";
+import { ActivityIndicator } from "react-native-paper";
 export default class MyUgc extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    let { ugcList } = this.props;
+    let { ugcList, isFetchingDakaMy } = this.props;
+    let dataFetchingView = (
+      <ActivityIndicator
+        animating={true}
+        color="#000"
+        style={styles.activityIndicator}
+      />
+    );
+    let fetchedView = <UgcList ugcList={ugcList} />;
+    let ugcListView = isFetchingDakaMy ? dataFetchingView : fetchedView;
     return (
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.leftText}>我的打卡日记</Text>
           <Text style={styles.rightText}>查看更多</Text>
         </View>
-        <UgcList ugcList={ugcList} />
+        {ugcListView}
       </View>
     );
   }
@@ -40,5 +50,8 @@ const styles = StyleSheet.create({
   rightText: {
     fontSize: 13,
     color: "#0092fe"
+  },
+  activityIndicator: {
+    flex: 1
   }
 });

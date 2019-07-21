@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Swiper from "react-native-swiper";
+import baseConfig from "src/config/baseConfig";;
 export default class FindBanner extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,8 @@ export default class FindBanner extends React.Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: 125
+    height: 125,
+    backgroundColor: baseConfig.baseColor
   },
   slide: {
     flex: 1,

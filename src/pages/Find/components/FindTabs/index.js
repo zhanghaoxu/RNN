@@ -6,9 +6,6 @@ import baseConfig from "src/config/baseConfig";
 export default class FindTabs extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activeCommunityId: 1
-    };
   }
 
   handleSelect(x, id) {
@@ -16,16 +13,13 @@ export default class FindTabs extends React.Component {
       x,
       animated: true
     });
-    this.setState({
-      activeCommunityId: id
-    });
 
     this.props.updateFeedList(id);
   }
 
   render() {
+    let activeCommunityId = this.props.activeCommunityId;
     let communityList = this.props.communityList;
-    let activeCommunityId = this.state.activeCommunityId;
 
     let TabList = communityList.map(v => {
       let isActive = activeCommunityId === parseInt(v.id, 10);
@@ -40,7 +34,13 @@ export default class FindTabs extends React.Component {
       );
     });
 
-    let dataFetchingView = <ActivityIndicator animating={true} color="#fff" />;
+    let dataFetchingView = (
+      <ActivityIndicator
+        animating={true}
+        color="#fff"
+        style={styles.activityIndicator}
+      />
+    );
 
     let dataFetchedView = (
       <ScrollView
@@ -65,6 +65,9 @@ let styles = StyleSheet.create({
   wrapper: {
     height: 50,
     backgroundColor: baseConfig.baseColor
+  },
+  activityIndicator: {
+    flex: 1
   },
   contentContainer: {},
   textContainer: {

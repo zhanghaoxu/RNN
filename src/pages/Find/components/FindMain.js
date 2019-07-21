@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, RefreshControl } from "react-native";
 import { Button } from "react-native-paper";
 import React from "react";
 import FindBanner from "./FindBanner";
@@ -8,6 +8,15 @@ import baseConfig from "src/config/baseConfig";
 export default class FindMain extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      refreshing: false
+    };
+  }
+
+  _onRefresh() {
+    const { activeCommunityId } = this.props;
+
+    this.props.updateFeedList(activeCommunityId);
   }
 
   render() {
@@ -15,16 +24,25 @@ export default class FindMain extends React.Component {
       communityList,
       isFetchingCommunityList,
       feedList,
-      isFetchingFeedList
+      isFetchingFeedList,
+      activeCommunityId
     } = this.props;
+
+    let { refreshing } = this.state;
     return (
       <ScrollView
-        contentContainerStyle={isFetchingFeedList ? { flex: 1 } : {}}
         stickyHeaderIndices={[1]}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={this._onRefresh.bind(this)}
+          />
+        }
       >
         <FindBanner />
         <FindTabs
           communityList={communityList}
+          activeCommunityId={activeCommunityId}
           isFetchingCommunityList={isFetchingCommunityList}
           updateFeedList={this.props.updateFeedList}
         />
@@ -51,6 +69,9 @@ let style = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: "#F6F7F9"
+  },
+  scrollViewNoList: {
+    flex: 1
   },
   createGroupButton: {
     borderColor: baseConfig.baseColor,

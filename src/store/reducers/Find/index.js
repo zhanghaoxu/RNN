@@ -1,4 +1,5 @@
 const initialState = {
+  activeCommunityId: 1,
   communityList: [],
   isFetchingCommunityList: false,
   feedList: {
@@ -36,8 +37,11 @@ const FindReducers = (state = initialState, action) => {
       return Object.assign({}, state, {
         isFetchingCommunityList: false
       });
+    case "UPDATE_ACTIVE_COMMUNITY_ID":
+      return Object.assign({}, state, {
+        activeCommunityId: action.data
+      });
     default:
-      console.log(111);
       return state;
   }
 };

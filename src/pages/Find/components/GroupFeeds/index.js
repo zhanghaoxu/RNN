@@ -24,7 +24,13 @@ export default class GroupFeeds extends React.Component {
       );
     });
 
-    let dataFetchingView = <ActivityIndicator animating={true} color="#000" />;
+    let dataFetchingView = (
+      <ActivityIndicator
+        animating={true}
+        color="#000"
+        style={styles.activityIndicator}
+      />
+    );
     let dataFetchedView = feedListView;
     let GroupFeedsView = isFetchingFeedList
       ? dataFetchingView
@@ -36,5 +42,8 @@ let styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     marginTop: 10
+  },
+  activityIndicator: {
+    flex: 1
   }
 });

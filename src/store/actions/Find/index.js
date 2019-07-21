@@ -1,5 +1,10 @@
 import { getCommunityAllList, queryHomeList } from "src/apis/base";
-
+export function updateActiveCommunityId(data) {
+  return {
+    type: "UPDATE_ACTIVE_COMMUNITY_ID",
+    data
+  };
+}
 export function getCommunityListStart() {
   return {
     type: "GET_COMMUNITY_LIST_START"
@@ -38,13 +43,11 @@ export function getFeedListError() {
   };
 }
 
-export const getCommunityListHttp = id => {
+export const getCommunityListHttp = () => {
   return function(dispatch) {
     dispatch(getCommunityListStart());
 
-    getCommunityAllList({
-      communityId: id
-    })
+    getCommunityAllList()
       .then(data => {
         dispatch(getCommunityListEnd(data));
       })
@@ -55,10 +58,13 @@ export const getCommunityListHttp = id => {
   };
 };
 
-export const getFeedListHttp = () => {
+export const updateActiveCommunityIdHandler = id => {
   return function(dispatch) {
+    dispatch(updateActiveCommunityId(id));
     dispatch(getFeedListStart());
-    queryHomeList()
+    queryHomeList({
+      communityId: id
+    })
       .then(data => {
         dispatch(getFeedListEnd(data));
       })
@@ -67,4 +73,8 @@ export const getFeedListHttp = () => {
         console.log(e);
       });
   };
+};
+
+export const getFeedListHttp = id => {
+  return function(dispatch) {};
 };

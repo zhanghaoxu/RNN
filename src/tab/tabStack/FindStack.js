@@ -1,9 +1,11 @@
 import { createStackNavigator } from "react-navigation";
 // FindStack
 import FindScreen from "src/pages/Find";
+import WebView from "src/pages/WebView";
 const FindStack = createStackNavigator(
   {
-    Find: FindScreen
+    Find: FindScreen,
+    WebView: WebView
   },
   {
     mode: "modal",

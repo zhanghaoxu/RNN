@@ -36,6 +36,7 @@ class FindScreen extends Component {
       >
         <FindHeader title={headerTitle} />
         <FindMain
+          navigation={this.props.navigation}
           updateFeedList={this.getFeedList.bind(this)}
           communityList={findState.communityList}
           isFetchingCommunityList={findState.isFetchingCommunityList}

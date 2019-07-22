@@ -51,6 +51,9 @@ export default class FindMain extends React.Component {
             title="创建打卡小组"
             color="#2F2F34"
             style={style.createGroupButton}
+            onPress={() => {
+              this.props.navigation.push("WebView");
+            }}
           >
             创建打卡小组
           </Button>

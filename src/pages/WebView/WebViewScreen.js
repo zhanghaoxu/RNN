@@ -9,9 +9,27 @@ class WebViewScreen extends Component {
 
     this.state = {
       canGoBack: false,
-      title: "容器"
+      title: ""
     };
   }
+
+  setTitle(title) {
+    this.setState({
+      title
+    });
+  }
+
+  handlerH5Event(e) {
+    let data = JSON.parse(e.nativeEvent.data);
+    switch (data.type) {
+      case "setTitle":
+        this.setTitle(data.title);
+        break;
+      default:
+        return;
+    }
+  }
+
   static navigationOptions = {
     headerLeft: (
       <Button
@@ -23,13 +41,15 @@ class WebViewScreen extends Component {
   };
   render() {
     let title = this.state.title;
+
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <WebViewHeader title={title} />
         <WebView
           ref={myWeb => (this.webView = myWeb)}
           onNavigationStateChange={this.onNavigationStateChange.bind(this)}
-          source={{ uri: "http://www.baidu.com" }}
+          onMessage={this.handlerH5Event.bind(this)}
+          source={{ uri: "http://10.242.112.136:3000" }}
         />
       </View>
     );

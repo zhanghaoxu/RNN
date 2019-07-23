@@ -22,7 +22,7 @@ function Request(options, { $loading, $toast }) {
         });
       } else {
         return new Promise(function(resolve, reject) {
-          $toast.show("服务端错误");
+          $toast && $toast.show("服务端错误");
           reject(res.data);
         });
       }
@@ -31,7 +31,7 @@ function Request(options, { $loading, $toast }) {
       return new Promise(function(resolve, reject) {
         console.log("error");
         options.loading && $loading && $loading.hide();
-        $toast.show("网络错误");
+        $toast && $toast.show("网络错误");
         reject();
       });
     });

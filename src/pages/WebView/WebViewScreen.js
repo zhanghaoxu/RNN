@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BackHandler, Button, View } from "react-native";
 import { WebView } from "react-native-webview";
 import WebViewHeader from "./components/WebViewHeader";
+import injectedJavaScript from "./injectedJavaScript";
 // ...
 class WebViewScreen extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class WebViewScreen extends Component {
         <WebViewHeader title={title} />
         <WebView
           ref={myWeb => (this.webView = myWeb)}
+          injectedJavaScript={injectedJavaScript.toString}
           onNavigationStateChange={this.onNavigationStateChange.bind(this)}
           onMessage={this.handlerH5Event.bind(this)}
           source={{ uri: "http://10.242.112.136:3000" }}

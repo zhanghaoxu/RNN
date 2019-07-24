@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import MyHeader from "./components/MyHeader";
 import MyMain from "./components/MyMain";
-import baseConfig from "src/config/baseConfig";
 
 class MyScreen extends Component {
   constructor(props) {
@@ -37,7 +36,7 @@ class MyScreen extends Component {
       <View
         style={{
           flex: 1,
-          backgroundColor: baseConfig.baseColor
+          backgroundColor: "#F6F7F9"
         }}
       >
         <MyHeader title={headerTitle} />

@@ -11,7 +11,8 @@ class WebViewScreen extends Component {
 
     this.state = {
       canGoBack: false,
-      title: ""
+      title: "",
+      shareInfo: {}
     };
   }
 
@@ -41,12 +42,13 @@ class WebViewScreen extends Component {
       />
     )
   };
+
   render() {
     let title = this.state.title;
-
+    let shareInfo = this.state.shareInfo;
     return (
       <View style={{ flex: 1 }}>
-        <WebViewHeader title={title} />
+        <WebViewHeader title={title} shareInfo={shareInfo} />
         <WebView
           ref={myWeb => (this.webView = myWeb)}
           injectedJavaScript={injectedJavaScript.toString()}

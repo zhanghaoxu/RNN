@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import UserInfo from "./userInfo";
 import UserScore from "./userScore";
 import UserDakaInfo from "./userDakaInfo";
+import baseConfig from "src/config/baseConfig";
 export default class MyBanner extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +26,7 @@ let styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
-    paddingBottom: 20
+    paddingBottom: 20,
+    backgroundColor: baseConfig.baseColor
   }
 });

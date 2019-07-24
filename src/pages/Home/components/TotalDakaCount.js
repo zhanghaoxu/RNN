@@ -11,18 +11,19 @@ export default class TotalDakaCount extends React.Component {
     return (
       <View
         style={{
-          height: 25
+          height: 40
         }}
       >
         <Text
           style={{
             textAlign: "center",
             fontSize: 14,
+            lineHeight: 35,
             color: "rgba(47, 47, 52, 1)",
-            fontWeight: "500"
+            fontWeight: "600"
           }}
         >
-          ······ 你已打卡{totalDakaCount}次，加油！······
+          你已打卡{totalDakaCount}次，加油！
         </Text>
       </View>
     );

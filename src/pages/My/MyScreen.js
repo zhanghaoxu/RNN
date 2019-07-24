@@ -14,7 +14,7 @@ class MyScreen extends Component {
   }
 
   componentDidMount() {
-    this._getData();;
+    this._getData();
   }
 
   _getData() {
@@ -32,7 +32,7 @@ class MyScreen extends Component {
   render() {
     const headerTitle = this.state.title;
     const { globalState, myState } = this.props;
-    console.log(globalState.userInfo);
+
     return (
       <View
         style={{

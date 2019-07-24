@@ -49,10 +49,10 @@ class WebViewScreen extends Component {
         <WebViewHeader title={title} />
         <WebView
           ref={myWeb => (this.webView = myWeb)}
-          injectedJavaScript={injectedJavaScript.toString}
+          injectedJavaScript={injectedJavaScript.toString()}
           onNavigationStateChange={this.onNavigationStateChange.bind(this)}
           onMessage={this.handlerH5Event.bind(this)}
-          source={{ uri: "http://192.168.1.177:8080" }}
+          source={{ uri: "http://10.242.112.136:3000" }}
         />
       </View>
     );
@@ -71,13 +71,10 @@ class WebViewScreen extends Component {
   }
 
   handleBackPress = () => {
-    console.warn("1");
     if (this.state.canGoBack) {
       this.webView.goBack();
-      console.warn("2");
     } else {
       this.props.navigation.goBack(null);
-      console.warn("3");
     }
     return true;
   };

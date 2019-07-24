@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { Component } from "react";
 import { BackHandler, Button, View } from "react-native";
 import { WebView } from "react-native-webview";
@@ -51,7 +52,7 @@ class WebViewScreen extends Component {
           injectedJavaScript={injectedJavaScript.toString}
           onNavigationStateChange={this.onNavigationStateChange.bind(this)}
           onMessage={this.handlerH5Event.bind(this)}
-          source={{ uri: "http://10.242.112.136:3000" }}
+          source={{ uri: "http://192.168.1.177:8080" }}
         />
       </View>
     );
@@ -72,7 +73,7 @@ class WebViewScreen extends Component {
   handleBackPress = () => {
     console.warn("1");
     if (this.state.canGoBack) {
-      this.refWeb.goBack();
+      this.webView.goBack();
       console.warn("2");
     } else {
       this.props.navigation.goBack(null);

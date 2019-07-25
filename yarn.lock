@@ -944,6 +944,25 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
+"@react-native-firebase/app-types@0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-0.0.26.tgz#70499ee68f5f3807370b994e352fbc207e99512f"
+  integrity sha512-3iC+NCrdHr69FcE6E9XuSZxga7bA/rNr01dmfWvsDeiD4S3kxrMPjnjp3AA6DumqJKZ+8WxKAAIQ5O0BrY0gag==
+
+"@react-native-firebase/app@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-0.0.26.tgz#c068774042986d766898da8cfaefba2705a77bec"
+  integrity sha512-jQu/NSioOiqx6rxgYg2NZmIUnc+GQ4/4d97F0P+/MzdYJlpoTemY0/F9QV9OFvEhuUm8hlt/KkgPXIFFEcp3Zg==
+  dependencies:
+    "@react-native-firebase/app-types" "0.0.26"
+    "@react-native-firebase/common" "0.0.26"
+    opencollective-postinstall "^2.0.1"
+
+"@react-native-firebase/common@0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/common/-/common-0.0.26.tgz#3df21a8eaf1a37ab66af13fa1af47c2f70dcfb30"
+  integrity sha512-fyBMBEW0iubxrCVIcTg6ByWohXHG77hDNEW3RsemY1Ph7/qvov79NdRLnLX54NQRDSzN1GpGlj4tV6y8isiD1A==
+
 "@react-navigation/core@~3.4.1":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.4.2.tgz#bec563e94fde40fbab3730cdc97f22afbb2a1498"
@@ -2006,7 +2025,7 @@ cosmiconfig@^5.0.5, cosmiconfig@^5.1.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-react-class@^15.6.3:
+create-react-class@^15.6.2, create-react-class@^15.6.3:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -2106,6 +2125,11 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+
+deep-diff@^0.3.5:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
+  integrity sha1-wB3mPvsO7JeYgB1Ax+Da4ltYLIQ=
 
 deep-extend@^0.6.0:
   version "0.6.0"
@@ -5031,7 +5055,7 @@ open@^6.2.0:
   dependencies:
     is-wsl "^1.1.0"
 
-opencollective-postinstall@^2.0.0:
+opencollective-postinstall@^2.0.0, opencollective-postinstall@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
   integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
@@ -5580,6 +5604,20 @@ react-native-safe-area-view@^0.14.1:
   dependencies:
     debounce "^1.2.0"
 
+react-native-scrollable-tab-view@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-native-scrollable-tab-view/-/react-native-scrollable-tab-view-0.10.0.tgz#8ce7908254685ee37d35df7d849676eaa1e81132"
+  integrity sha512-7FWw9X2hLozWqpGJTAU/p7ONdTTO635bbAZ5AUPDrB4JwaLbhNV6ePjsNUjsCaopgCwz/EdmH0hTCPeja9dh4w==
+  dependencies:
+    create-react-class "^15.6.2"
+    prop-types "^15.6.0"
+    react-timer-mixin "^0.13.3"
+
+react-native-share@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-share/-/react-native-share-2.0.0.tgz#4543a746013e0d8fa9f765fb8937007cfbcffcf7"
+  integrity sha512-J8Xl3mq0L9KDFtSYtKsQDAnZWw/niZIpAD1PRiNfZFHo44Rc+oS2bEIhskNnoQXKEgBNdPzCl/DenMXYAHXRYg==
+
 react-native-splash-screen@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
@@ -5590,10 +5628,10 @@ react-native-status-bar-height@^2.2.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.3.1.tgz#b92ce9112c2367290847ac11284d9d84a6330169"
   integrity sha512-m9nGKYfFn6ljF1abafzF5cFaD9JCzXwj7kNE9CuF+g0TgtItH70eY2uHaCV9moENTftqd5XIS3Cx0mf4WfistA==
 
-react-native-swiper@^1.5.14:
-  version "1.5.14"
-  resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.5.14.tgz#1c6f949ca377186300f972bb0f30d24062c899aa"
-  integrity sha512-Kn0fxKooN7Shwu1qJYHB+Y8ssXXnvrIwReHXU5jCdyYNfz2QbBv0Cv3sa2Mqzr+XgzORCFFIokc8uCCUITDrVA==
+react-native-swiper@^1.6.0-nightly.3:
+  version "1.6.0-nightly.3"
+  resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.6.0-nightly.3.tgz#02ff0b77f821aa18c3befb61e452c8a42648ecc6"
+  integrity sha512-+NG/ECgkukfwfDvhzgzAZsKt3B4hN+gwuyK9mRCfsCELWNNsbdjwSbB2eTCAh/3MMR/Aj+VobitFuZuKtZ5RVA==
   dependencies:
     prop-types "^15.5.10"
 
@@ -5613,10 +5651,10 @@ react-native-vector-icons@^6.6.0:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
-react-native-webview@^5.12.1:
-  version "5.12.1"
-  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-5.12.1.tgz#5e2b124e9087d64fc40040d911c10ee5744b5d4d"
-  integrity sha512-pFYzyNUG+k7Jk2a0Z3S1+OL9qtp0VQxVP08d1ume/O6l1Xibi0K0hRZms7zPUHqQc2uWEfjZ0FOa17MIN7vruw==
+react-native-webview@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-6.3.1.tgz#fa8e855bc8cafeda3362eafe8c84d8562df1514c"
+  integrity sha512-DdiEgzIYZCmKXSu9roVq4DHw+RQsNqbU5Qwafinm8WDUygxO61XmB+130v+jsKkwG8D4B8IFS96/aPphrp9LnA==
   dependencies:
     escape-string-regexp "1.0.5"
     invariant "2.2.4"
@@ -5721,6 +5759,11 @@ react-test-renderer@16.8.6:
     react-is "^16.8.6"
     scheduler "^0.13.6"
 
+react-timer-mixin@^0.13.3:
+  version "0.13.4"
+  resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
+  integrity sha512-4+ow23tp/Tv7hBM5Az5/Be/eKKF7DIvJ09voz5LyHGQaqqz9WV8YMs31eFvcYQs7d451LSg7kDJV70XYN/Ug/Q==
+
 react-transform-hmr@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/react-transform-hmr/-/react-transform-hmr-1.0.4.tgz#e1a40bd0aaefc72e8dfd7a7cda09af85066397bb"
@@ -5818,6 +5861,18 @@ redux-devtools@^3.5.0:
     lodash "^4.2.0"
     prop-types "^15.5.7"
     redux-devtools-instrument "^1.9.0"
+
+redux-logger@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+  integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
+  dependencies:
+    deep-diff "^0.3.5"
+
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
 redux@^4.0.1:
   version "4.0.2"

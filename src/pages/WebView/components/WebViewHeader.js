@@ -13,7 +13,7 @@ class WebViewHeader extends React.Component {
     Share.open({
       message: "A framework for building native apps using React",
       url: "http://facebook.github.io/react-native/",
-      title: "shuai",
+      title: "This is a title",
       showAppsTOView: true
     })
       .then(this._showResult)

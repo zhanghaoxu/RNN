@@ -9,7 +9,6 @@ import Loading from "./src/components/Loading";
 import SplashScreen from "react-native-splash-screen";
 
 import store from "./src/store";
-import firebase from "react-native-firebase";
 
 let Navigation = createAppContainer(TabNavigator);
 // Render the app container component with the provider around it

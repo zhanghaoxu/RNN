@@ -105,7 +105,7 @@ class WebViewScreen extends Component {
           injectedJavaScript={injectedJavaScript.toString()}
           onNavigationStateChange={this.onNavigationStateChange.bind(this)}
           onMessage={this.handlerH5Event.bind(this)}
-          source={{ uri: "http://10.242.112.136:3000" }}
+          source={{ uri: "http://192.168.1.177:8080" }}
         />
       </View>
     );

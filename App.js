@@ -3,12 +3,15 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { createAppContainer } from "react-navigation";
 import TabNavigator from "./src/tab";
-import { BackHandler, View, PushNotificationIOS } from "react-native";
+import { BackHandler, View } from "react-native";
 import Toast from "react-native-easy-toast";
 import Loading from "./src/components/Loading";
 import SplashScreen from "react-native-splash-screen";
-
 import store from "./src/store";
+import pushNotification from "./src/utils/pushNotification";
+
+//挂载推送api到rn实例
+Component.prototype.$pushNotification = pushNotification;
 
 let Navigation = createAppContainer(TabNavigator);
 // Render the app container component with the provider around it

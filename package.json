@@ -20,6 +20,10 @@
     "react-native-gesture-handler": "^1.3.0",
     "react-native-loading-spinner-overlay": "^1.0.1",
     "react-native-paper": "^2.16.0",
+<<<<<<< HEAD
+=======
+    "react-native-push-notification": "git+https://github.com/zo0r/react-native-push-notification.git",
+>>>>>>> 1bc0a3403dae2127ca7ba592471456703f86411b
     "react-native-share": "^2.0.0",
     "react-native-splash-screen": "^3.2.0",
     "react-native-swiper": "^1.6.0-nightly.3",

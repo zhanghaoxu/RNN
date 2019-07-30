@@ -3,7 +3,7 @@
 buildscript {
     ext {
         
-        googlePlayServicesVersion = "+" // default: "+"
+        googlePlayServicesVersion = "16.0.1" // default: "+"
         firebaseVersion = "+" // default: "+"
 
         buildToolsVersion = "28.0.3"
@@ -39,4 +39,5 @@ allprojects {
         google()
         jcenter()
     }
+    
 }

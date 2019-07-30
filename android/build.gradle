@@ -39,9 +39,5 @@ allprojects {
         google()
         jcenter()
     }
-    configurations.all {
-        resolutionStrategy { 
-            force 'com.google.android.gms:play-services-gcm:12.0.1'
-        }
-    }
+    
 }

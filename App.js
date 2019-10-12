@@ -8,15 +8,16 @@ import Toast from "react-native-easy-toast";
 import Loading from "./src/components/Loading";
 import SplashScreen from "react-native-splash-screen";
 import store from "./src/store";
-import pushNotification from "./src/utils/pushNotification";
-
+import pushNotificationConfig from "./src/utils/pushNotification";
+console.warn("111");
 //挂载推送api到rn实例
-Component.prototype.$pushNotification = pushNotification;
 
 let Navigation = createAppContainer(TabNavigator);
 // Render the app container component with the provider around it
 export default class App extends Component {
   componentDidMount() {
+    console.warn("222");
+    pushNotificationConfig();
     SplashScreen.hide();
     BackHandler.addEventListener("hardwareBackPress", this.handleBackPress);
   }

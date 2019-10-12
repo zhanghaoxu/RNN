@@ -4,7 +4,7 @@ import { BackHandler, Button, View, PushNotificationIOS } from "react-native";
 import { WebView } from "react-native-webview";
 import WebViewHeader from "./components/WebViewHeader";
 import injectedJavaScript from "./injectedJavaScript";
-
+var PushNotification = require("react-native-push-notification");
 // ...
 class WebViewScreen extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class WebViewScreen extends Component {
   }
 
   pushNotification(opt) {
-    this.$pushNotification.localNotification(opt);
+    PushNotification.localNotification(opt);
   }
 
   handlerH5Event(e) {

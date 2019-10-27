@@ -1,5 +1,4 @@
 /* eslint-disable react-native/no-inline-styles */
-import { Appbar } from "react-native-paper";
 import { StatusBar, View } from "react-native";
 import React from "react";
 class HomeHeader extends React.Component {
@@ -19,16 +18,6 @@ class HomeHeader extends React.Component {
           hidden={false}
           animated={true}
         />
-        <Appbar.Header
-          style={{
-            backgroundColor: "#FEDC24"
-          }}
-          statusBarHeight={15}
-        >
-          <Appbar.Content title={this.props.title} />
-          <Appbar.Action icon="search" onPress={this._onSearch} />
-          <Appbar.Action icon="more-vert" onPress={this._onMore} />
-        </Appbar.Header>
       </View>
     );
   }

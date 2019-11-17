@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { Button } from "react-native-paper";
 import Icon from "react-native-vector-icons/AntDesign";
 import UgcList from "./ugc";
-import baseConfig from "src/config/baseConfig";
+import baseConfig from "@/config/baseConfig";
 export default class Feed extends React.Component {
   constructor(props) {
     super(props);

@@ -5,7 +5,7 @@ import {
   getCommunityListHttp,
   getFeedListHttp,
   updateActiveCommunityIdHandler
-} from "src/store/actions/Find";
+} from "@/store/actions/Find";
 
 let FindScreenContainer = connect(state => ({
   findState: state.find,

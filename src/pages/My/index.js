@@ -1,8 +1,8 @@
 import MyScreen from "./MyScreen";
 import { connect } from "react-redux";
 
-import { getUserInfoHttp } from "src/store/actions/Global";
-import { getMyRewardHttp, getDakaMyHttp } from "src/store/actions/My";
+import { getUserInfoHttp } from "@/store/actions/Global";
+import { getMyRewardHttp, getDakaMyHttp } from "@/store/actions/My";
 
 let MyScreenContainer = connect(state => ({
   myState: state.my,

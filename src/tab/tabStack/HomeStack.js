@@ -1,9 +1,9 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 // HomeStack
-import HomeScreen from "src/pages/Home";
-import HomeStackDetailScreen from "src/pages/Home/Subs/Detail";
-import HomeStackBlogScreen from "src/pages/Home/Subs/Blog";
-import WebView from "src/pages/WebView";
+import HomeScreen from "@/pages/Home";
+import HomeStackDetailScreen from "@/pages/Home/Subs/Detail";
+import HomeStackBlogScreen from "@/pages/Home/Subs/Blog";
+import WebView from "@/pages/WebView";
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,

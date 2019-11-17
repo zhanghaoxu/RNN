@@ -4,7 +4,7 @@ import React from "react";
 import FindBanner from "./FindBanner";
 import FindTabs from "./FindTabs";
 import GroupFeeds from "./GroupFeeds";
-import baseConfig from "src/config/baseConfig";
+import baseConfig from "@/config/baseConfig";
 export default class FindMain extends React.Component {
   constructor(props) {
     super(props);

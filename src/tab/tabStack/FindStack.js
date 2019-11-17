@@ -1,7 +1,7 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 // FindStack
-import FindScreen from "src/pages/Find";
-import WebView from "src/pages/WebView";
+import FindScreen from "@/pages/Find";
+import WebView from "@/pages/WebView";
 const FindStack = createStackNavigator(
   {
     Find: FindScreen,

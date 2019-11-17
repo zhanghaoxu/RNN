@@ -1,7 +1,7 @@
 import React from "react";
-import { createBottomTabNavigator } from "react-navigation";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 //baseConfig
-import baseConfig from "src/config/baseConfig";
+import baseConfig from "@/config/baseConfig";
 import Icon from "react-native-vector-icons/AntDesign";
 import HomeStack from "./tabStack/HomeStack";
 import MyStack from "./tabStack/MyStack";

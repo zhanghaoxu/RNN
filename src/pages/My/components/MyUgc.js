@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import UgcList from "src/pages/Find/components/GroupFeeds/ugc";
+import UgcList from "@/pages/Find/components/GroupFeeds/ugc";
 import { ActivityIndicator } from "react-native-paper";
 export default class MyUgc extends React.Component {
   constructor(props) {

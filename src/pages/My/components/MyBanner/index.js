@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import UserInfo from "./userInfo";
 import UserScore from "./userScore";
 import UserDakaInfo from "./userDakaInfo";
-import baseConfig from "src/config/baseConfig";
+import baseConfig from "@/config/baseConfig";
 export default class MyBanner extends React.Component {
   constructor(props) {
     super(props);

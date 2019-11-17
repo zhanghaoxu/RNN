@@ -1,4 +1,4 @@
-import request from "src/utils/request";
+import request from "@/utils/request";
 
 /**
  * 查询所有圈子列表

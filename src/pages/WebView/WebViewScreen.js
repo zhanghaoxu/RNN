@@ -1,95 +1,55 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from "react";
-import { BackHandler, Button, View, PushNotificationIOS } from "react-native";
-import { WebView } from "react-native-webview";
+import { Button, View } from "react-native";
+import MyWebView from "@/components/MyWebView";
 import WebViewHeader from "./components/WebViewHeader";
-import injectedJavaScript from "./injectedJavaScript";
-var PushNotification = require("react-native-push-notification");
+
 // ...
 class WebViewScreen extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      canGoBack: false,
       title: "",
-      shareInfo: {}
+      shareInfo: {},
+      showHeaderBackAction: false
     };
   }
 
-  setTitle(title) {
+  updateShowHeaderBackAction(v) {
     this.setState({
-      title
+      showHeaderBackAction: v
     });
   }
 
-  pushNotification(opt) {
-    PushNotification.localNotification(opt);
+  goBackPage() {
+    this.myWebView.handleBackPress();
   }
-
-  handlerH5Event(e) {
-    let data = JSON.parse(e.nativeEvent.data);
-    switch (data.type) {
-      case "setTitle":
-        this.setTitle(data.title);
-        break;
-      case "pushNotification":
-        this.pushNotification({
-          message: data.message
-        });
-        break;
-      default:
-        return;
-    }
-  }
-
-  static navigationOptions = {
-    headerLeft: (
-      <Button
-        onPress={() => console.warn("This is a button!")}
-        title="Info"
-        color="#000"
-      />
-    )
-  };
 
   render() {
     let title = this.state.title;
     let shareInfo = this.state.shareInfo;
+    let showHeaderBackAction = this.state.showHeaderBackAction;
     return (
       <View style={{ flex: 1 }}>
-        <WebViewHeader title={title} shareInfo={shareInfo} />
-        <WebView
-          ref={myWeb => (this.webView = myWeb)}
-          injectedJavaScript={injectedJavaScript.toString()}
-          onNavigationStateChange={this.onNavigationStateChange.bind(this)}
-          onMessage={this.handlerH5Event.bind(this)}
-          source={{ uri: "http://10.242.112.136:3000" }}
+        <WebViewHeader
+          title={title}
+          shareInfo={shareInfo}
+          showHeaderBackAction={showHeaderBackAction}
+          goBackPage={this.goBackPage.bind(this)}
+        />
+        <MyWebView
+          ref={myWebView => {
+            this.myWebView = myWebView;
+          }}
+          navigation={this.props.navigation}
+          updateShowHeaderBackAction={this.updateShowHeaderBackAction.bind(
+            this
+          )}
         />
       </View>
     );
   }
-  componentDidMount() {
-    BackHandler.addEventListener("hardwareBackPress", this.handleBackPress);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener("hardwareBackPress", this.handleBackPress);
-  }
-  onNavigationStateChange(navState) {
-    this.setState({
-      canGoBack: navState.canGoBack
-    });
-  }
-
-  handleBackPress = () => {
-    if (this.state.canGoBack) {
-      this.webView.goBack();
-    } else {
-      this.props.navigation.goBack(null);
-    }
-    return true;
-  };
 }
 
 export default WebViewScreen;

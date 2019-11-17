@@ -1,4 +1,4 @@
-import { getMyReward, getDakaMy } from "src/apis/base";
+import { getMyReward, getDakaMy } from "@/apis/base";
 /**
  *
  * @param {*} data

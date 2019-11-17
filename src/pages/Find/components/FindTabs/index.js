@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet, View, Text } from "react-native";
 import Tab from "./tab";
 import { ActivityIndicator } from "react-native-paper";
-import baseConfig from "src/config/baseConfig";
+import baseConfig from "@/config/baseConfig";
 export default class FindTabs extends React.Component {
   constructor(props) {
     super(props);

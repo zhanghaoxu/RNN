@@ -1,8 +1,8 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 // MyStack
-import MyScreen from "src/pages/My";
-import MyStackDetailScreen from "src/pages/My/Subs/Detail";
-import WebView from "src/pages/WebView";
+import MyScreen from "@/pages/My";
+import MyStackDetailScreen from "@/pages/My/Subs/Detail";
+import WebView from "@/pages/WebView";
 const MyStack = createStackNavigator(
   {
     My: MyScreen,

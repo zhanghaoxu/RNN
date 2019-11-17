@@ -1,7 +1,7 @@
 import HomeScreen from "./HomeScreen";
 import { connect } from "react-redux";
 
-import { getJoinedListHttp } from "src/store/actions/Global";
+import { getJoinedListHttp } from "@/store/actions/Global";
 
 let HomeScreenContainer = connect(state => ({
   homeState: state.home,

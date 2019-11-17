@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Swiper from "react-native-swiper";
-import baseConfig from "src/config/baseConfig";;
+import baseConfig from "@/config/baseConfig";;
 export default class FindBanner extends React.Component {
   constructor(props) {
     super(props);

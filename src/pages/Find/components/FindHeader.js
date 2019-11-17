@@ -12,7 +12,11 @@ class FindHeader extends React.Component {
   _onMore = () => console.warn("Shown more");
   render() {
     return (
-      <View>
+      <View
+        style={{
+          shadowColor: null
+        }}
+      >
         <StatusBar
           backgroundColor="transparent"
           translucent={true}
@@ -26,8 +30,8 @@ class FindHeader extends React.Component {
           statusBarHeight={15}
         >
           <Appbar.Content title={this.props.title} />
-          <Appbar.Action icon="search" onPress={this._onSearch} />
-          <Appbar.Action icon="more-vert" onPress={this._onMore} />
+          <Appbar.Action icon="cloud-search" onPress={this._onSearch} />
+          <Appbar.Action icon="menu" onPress={this._onMore} />
         </Appbar.Header>
       </View>
     );

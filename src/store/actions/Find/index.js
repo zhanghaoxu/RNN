@@ -1,4 +1,4 @@
-import { getCommunityAllList, queryHomeList } from "src/apis/base";
+import { getCommunityAllList, queryHomeList } from "@/apis/base";
 export function updateActiveCommunityId(data) {
   return {
     type: "UPDATE_ACTIVE_COMMUNITY_ID",

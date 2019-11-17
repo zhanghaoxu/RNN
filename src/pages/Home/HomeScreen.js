@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import HomeHeader from "./components/HomeHeader";
 import HomeMain from "./components/HomeMain";
-import baseConfig from "src/config/baseConfig";
+import baseConfig from "@/config/baseConfig";
 
 class HomeScreen extends Component {
   constructor(props) {

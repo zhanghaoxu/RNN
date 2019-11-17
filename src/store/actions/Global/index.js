@@ -1,4 +1,4 @@
-import { queryDakaList, getUserInfo as getUserInfoReq } from "src/apis/base";
+import { queryDakaList, getUserInfo as getUserInfoReq } from "@/apis/base";
 
 export function getUserInfoStart(data) {
   return {

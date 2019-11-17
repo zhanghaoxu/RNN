@@ -20,6 +20,10 @@ class WebViewHeader extends React.Component {
       .catch(error => console.warn(error));
   };
 
+  _goBack = () => {
+    this.props.goBackPage();
+  };
+
   render() {
     return (
       <View>
@@ -31,11 +35,14 @@ class WebViewHeader extends React.Component {
         />
         <Appbar.Header
           style={{
-            backgroundColor: "#bbb",
-            height: 50
+            backgroundColor: "#ddd",
+            height: 40
           }}
           statusBarHeight={15}
         >
+          {this.props.showHeaderBackAction && (
+            <Appbar.BackAction onPress={this._goBack} />
+          )}
           <Appbar.Content
             title={this.props.title}
             titleStyle={{ fontSize: 15 }}
